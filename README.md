@@ -32,7 +32,7 @@ A modern, highly interactive, and secure client-side password strength analyzer 
 ```bash
 git clone https://github.com/Vipul99999/password-strength-checker.git
 cd password-strength-checker
-
+```
 
 
 ## 📖 How to Use
@@ -96,3 +96,4 @@ Pull requests are welcome! For major changes, please open an issue first to disc
 
 ## 📄 License
 Distributed under the [MIT License](LICENSE). See `LICENSE` for more information.
+ 

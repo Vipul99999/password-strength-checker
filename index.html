@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Password Strength Analyzer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🔐 Password Strength Analyzer</h1>
+            <button id="themeToggle" aria-label="Toggle dark mode">🌙</button>
+        </header>
+        
+        <div class="input-wrapper">
+            <input type="password" id="passwordInput" placeholder="Type or generate a password" autocomplete="new-password" spellcheck="false">
+            <div class="input-actions">
+                <button id="toggleVisibility" aria-label="Toggle visibility">👁️</button>
+                <button id="copyBtn" aria-label="Copy password">📋</button>
+            </div>
+        </div>
+
+        <div class="strength-meter-container">
+            <div class="strength-meter">
+                <div id="strengthBar"></div>
+            </div>
+            <div class="strength-info">
+                <span id="strengthLabel">Enter a password</span>
+                <span id="entropyLabel">Entropy: -- bits</span>
+            </div>
+        </div>
+
+        <ul id="criteriaList" class="criteria-list">
+            <li data-criteria="length">⚪ At least 8 characters</li>
+            <li data-criteria="uppercase">⚪ Contains uppercase (A-Z)</li>
+            <li data-criteria="lowercase">⚪ Contains lowercase (a-z)</li>
+            <li data-criteria="number">⚪ Contains number (0-9)</li>
+            <li data-criteria="special">⚪ Contains special (!@#$%^&*)</li>
+            <li data-criteria="entropy">⚪ High entropy (≥ 60 bits)</li>
+        </ul>
+
+        <div id="feedbackBox" class="feedback-box" aria-live="polite"></div>
+
+        <div class="generator-section">
+            <h3>⚡ Secure Password Generator</h3>
+            <div class="generator-controls">
+                <div class="slider-row">
+                    <label for="lengthSlider">Length: <span id="lengthValue">12</span></label>
+                    <input type="range" id="lengthSlider" min="8" max="64" value="12">
+                </div>
+                <div class="checkbox-group">
+                    <label><input type="checkbox" id="useUpper" checked> Uppercase</label>
+                    <label><input type="checkbox" id="useLower" checked> Lowercase</label>
+                    <label><input type="checkbox" id="useNumbers" checked> Numbers</label>
+                    <label><input type="checkbox" id="useSymbols" checked> Symbols</label>
+                </div>
+                <button id="generateBtn">Generate Strong Password</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="toast" class="toast" aria-hidden="true">Copied to clipboard!</div>
+    <script src="script.js"></script>
+</body>
+</html>
